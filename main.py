@@ -1,3 +1,5 @@
+__author__ = "Mr Bufford"
+
 # asymmetrical encryption attempt - using prime modulus
 # keys must be primes
 
