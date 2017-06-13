@@ -1,5 +1,8 @@
 __author__ = "Mr Bancroft"
 
+# a simple function to find all the prime numbers in a given range (determined by the
+# max_number_to_find_primes_to variable in main.py
+
 def get_primes(n):
     numbers = set(range(n,1,-1))
     primes = []
