@@ -16,4 +16,5 @@ print ("Alice send (basenumber ** alicekey) % publickey): " + str(aliceSend1))
 bobSend1=(basenumber**bobKey)%publickey
 print ("Bob send (basenumber ** bobkey) % publickey): " + str(bobSend1))
 alicedecode = (bobSend1**aliceKey)%publickey
-print("Alice code: " + str(alicedecode))bobdecode = (aliceSend1**bobKey)%publickeyprint ("Bob code: " + str(bobdecode))
+print("Alice code: " + str(alicedecode))bobdecode = (aliceSend1**bobKey)%publickey
+print ("Bob code: " + str(bobdecode))
