@@ -1,5 +1,6 @@
-#asymmetrical encryption attempt - using prime modulus
-#keys must be primes
+# asymmetrical encryption attempt - using prime modulus
+# keys must be primes
+
 import random
 primes= [2,3,5,7,11,13,15,17,19,23,27]
 primes2 = [2,3,5,7,11,13,15,17,19,23,27]
