@@ -4,7 +4,10 @@ __author__ = "Mr Bufford"
 # keys must be primes
 
 import random
-primes= [2,3,5,7,11,13,15,17,19,23,27]
+import prime
+
+primes = []
+primes = primeGenerator(1000)
 primes2 = [2,3,5,7,11,13,15,17,19,23,27]
 publickey = primes [random.randint(0,10)]
 print("publickey: " + str(publickey))
