@@ -7,20 +7,22 @@ import random
 import prime
 
 primes = []
-primes = primeGenerator(1000)
-primes2 = [2,3,5,7,11,13,15,17,19,23,27]
-publickey = primes [random.randint(0,10)]
-print("publickey: " + str(publickey))
-basenumber = random.randint (0,100)
-print("base number: " + str(basenumber))
-aliceKey = primes [random.randint(0,10)]
-print("Alice's key: " + str(aliceKey))
-bobKey = primes2 [random.randint(0,10)]
-print("Bob's key: " + str(bobKey))
+primes = prime.get_primes(1000000)
+primes2 = primes
+count = primes.__len__()
+publickey = primes [random.randint(0,count - 1)]
+print("publickey: " + str(publickey) + " (always a prime number)")
+basenumber = random.randint (0, count * 10)
+print("base number: " + str(basenumber) + " (base number, can be anything)")
+aliceKey = primes [random.randint(0,count - 1)]
+print("Alice's key: " + str(aliceKey) + " (always a prime number)")
+bobKey = primes2 [random.randint(0,count - 1)]
+print("Bob's key: " + str(bobKey) + " (always a prime number)")
 aliceSend1=(basenumber**aliceKey)%publickey
-print ("Alice send (basenumber ** alicekey) % publickey): " + str(aliceSend1))
+print ("Alice sends to Bob the base number to the power of  Alice's key modulo the public key: " + str(aliceSend1))
 bobSend1=(basenumber**bobKey)%publickey
-print ("Bob send (basenumber ** bobkey) % publickey): " + str(bobSend1))
+print ("Bob sends to Alice the base number to the power of Bob's key modulo the public key: " + str(bobSend1))
 alicedecode = (bobSend1**aliceKey)%publickey
-print("Alice code: " + str(alicedecode))bobdecode = (aliceSend1**bobKey)%publickey
-print ("Bob code: " + str(bobdecode))
+print("Alice code: " + str(alicedecode) + " (the result of Bob send to the power of Alice's key modulo the public key)")
+bobdecode = (aliceSend1**bobKey)%publickey
+print ("Bob code: " + str(bobdecode) + " (the result of Alice send to the power of Bob's key modulo the public key)")
