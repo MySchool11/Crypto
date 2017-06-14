@@ -12,7 +12,7 @@ from prime import get_primes                                # imports the "get_p
 # declaring the functions you wish to use and the libraries from which they came makes the code much easier to understand
 # also once declared instead of "random.randint(number, number)" for each usage you can just type "randint(number, number)", much easier and cleaner
 
-max_number_to_find_primes_to = 1000000                      # does what it says - sets the maximum number up to which primes will be sought
+max_number_to_find_primes_to = 10                           # does what it says - sets the maximum number up to which primes will be sought
 
 primes = []                                                 # declares an array called "primes"
 primes = get_primes(max_number_to_find_primes_to)           # populates the array "primes" using the get_prime method in prime.py
