@@ -3,23 +3,29 @@ __author__ = "Mr Bufford, Mr Bancroft"
 # asymmetrical encryption attempt - using prime modulus
 # keys must be primes
 
-import random
-import prime
+from random import randint                                  # imports the "randint" function from the "random" Python library
+from prime import get_primes                                # imports the "get_primes" function from the "prime.py" file
+
+# you can use import like this:
+# import random
+# but then each time you wish to use a function from random library you must declare "random.randint"
+# declaring the functions you wish to use and the libraries from which they came makes the code much easier to understand
+# also once declared instead of "random.randint(number, number)" for each usage you can just type "randint(number, number)", much easier and cleaner
 
 max_number_to_find_primes_to = 1000000                      # does what it says - sets the maximum number up to which primes will be sought
 
 primes = []                                                 # declares an array called "primes"
-primes = prime.get_primes(max_number_to_find_primes_to)     # populates the array "primes" using the get_prime method in prime.py
+primes = get_primes(max_number_to_find_primes_to)           # populates the array "primes" using the get_prime method in prime.py
 
 count = primes.__len__()                                    # declares a variable "count" and makes it equal to the number of items in the "primes" array
 
-public_key = primes [random.randint(0,count - 1)]           # randomly picks a prime from the array "primes" and puts it in "public_key"
+public_key = primes [randint(0,count - 1)]           # randomly picks a prime from the array "primes" and puts it in "public_key"
 print("public key: " + str(public_key) + " (always a prime number)")
-base_number = random.randint (0, count * 10)                # picks a random number between 0 and 10 * the number of primes in array "primes" and puts it in "base_number"
+base_number = randint (0, count * 10)                # picks a random number between 0 and 10 * the number of primes in array "primes" and puts it in "base_number"
 print("base number: " + str(base_number) + " (base number, can be anything)")
-alice_key = primes [random.randint(0,count - 1)]            # randomly picks a prime from the array "primes" and puts it in "alice_key"
+alice_key = primes [randint(0,count - 1)]            # randomly picks a prime from the array "primes" and puts it in "alice_key"
 print("Alice's key: " + str(alice_key) + " (always a prime number)")
-bob_key = primes [random.randint(0,count - 1)]              # randomly picks a prime from the array "primes" and puts it in "bob_key"
+bob_key = primes [randint(0,count - 1)]              # randomly picks a prime from the array "primes" and puts it in "bob_key"
 print("Bob's key: " + str(bob_key) + " (always a prime number)")
 alice_send = (base_number**alice_key)%public_key            # calculates the number Alice will send and puts it in "alice_send"
 print ("Alice sends to Bob the base number to the power of  Alice's key modulo the public key: " + str(alice_send))
