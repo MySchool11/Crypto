@@ -6,7 +6,7 @@ __author__ = "Mr Bufford, Mr Bancroft"
 import random
 import prime
 
-max_number_to_find_primes_to = 1000
+max_number_to_find_primes_to = 1000000                      # does what it says - sets the maximum number up to which primes will be sought
 
 primes = []                                                 # declares an array called "primes"
 primes = prime.get_primes(max_number_to_find_primes_to)     # populates the array "primes" using the get_prime method in prime.py
@@ -14,7 +14,7 @@ primes = prime.get_primes(max_number_to_find_primes_to)     # populates the arra
 count = primes.__len__()                                    # declares a variable "count" and makes it equal to the number of items in the "primes" array
 
 publickey = primes [random.randint(0,count - 1)]
-print("publickey: " + str(publickey) + " (always a prime number)")
+print("public key: " + str(publickey) + " (always a prime number)")
 basenumber = random.randint (0, count * 10)
 print("base number: " + str(basenumber) + " (base number, can be anything)")
 aliceKey = primes [random.randint(0,count - 1)]
