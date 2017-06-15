@@ -12,7 +12,7 @@ from prime import get_primes                                # imports the "get_p
 # declaring the functions you wish to use and the libraries from which they came makes the code much easier to understand
 # also once declared instead of "random.randint(number, number)" for each usage you can just type "randint(number, number)", much easier and cleaner
 
-max = 1000000                                               # "min" holds the minimum number the user can enter for the primes search
+max = 10000000                                              # "min" holds the minimum number the user can enter for the primes search
 min = 10                                                    # "max" holds the maximum number the user can enter for the primes search
 
 print("This program will show you how Diffie-Hellman key exchange works\n")
@@ -34,6 +34,8 @@ if max_number_to_find_primes_to > max:                      # If statement to en
 primes = get_primes(max_number_to_find_primes_to)           # declares an array called "primes" and populates it using the "get_prime) method in prime.py
 
 count = primes.__len__()                                    # declares a variable "count" and makes it equal to the number of items in the "primes" array
+
+print("\nThere are " + str(count) + " primes within the range you specified")
 
 public_key = primes [randint(0,count - 1)]                  # randomly picks a prime from the array "primes" and puts it in "public_key"
 print("\npublic key (always a prime number): " + str(public_key) + "\n")
