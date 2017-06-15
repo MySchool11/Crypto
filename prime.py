@@ -4,7 +4,8 @@ __author__ = "Mr Bancroft"
 # max_number_to_find_primes_to variable in main.py
 
 def get_primes(n):
-    number_range = set(range(n,1,-1))                                   # "set()" declares an unordered collection with no duplicates. "range()" creates a range of numbers
+    number_range = set(range(n,1,-1))                                   # "set()" declares an unordered collection with
+                                                                        # no duplicates. "range()" creates a range of numbers
                                                                         # starting at the passed in value n and ending at the item at index 1, counting back 1 every step so if 10
                                                                         # were passed it would create 2,3,4,5,6,7,8,9,10, this unordered collection of numbers is put into "number_range"
     primes = []                                                         # declares an array "primes"
